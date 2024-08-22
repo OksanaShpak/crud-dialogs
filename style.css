@@ -1,0 +1,68 @@
+::backdrop {
+  /* animation: fade-in 600ms ease-out forwards; */
+  transition: 600ms;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+dialog {
+  /* animation: fade-in 600ms ease-out forwards, slide-up 600ms ease-out forwards; */
+  transition: 600ms;
+
+  @starting-style {
+    translate: 0 100vh;
+    opacity: 0;
+  }
+}
+
+.fade-out::backdrop {
+  pointer-events: none;
+  animation: fade-out 600ms ease-out alternate backwards;
+}
+
+.fade-out {
+  pointer-events: none;
+  animation: fade-out 600ms ease-out alternate backwards, slide-down 600ms ease-out alternate backwards;
+}
+
+/* @keyframes slide-up {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+} */
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* @keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+} */
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
